@@ -6,8 +6,8 @@ namespace exercise_11
     {
         public static void Main(string[] args)
         {
-            int dayCount = 100;
-            double hoursToLunch = 1;
+            int dayCount = 90;
+            double hoursToLunch = 5;
             string statement = "Are you sure?";
 
             // DO NOT TOUCH THESE!
@@ -15,8 +15,9 @@ namespace exercise_11
             Console.WriteLine(dayCount);
             Console.WriteLine("Hours to lunch:");
             Console.WriteLine(hoursToLunch);
-            Console.WriteLine("Coding is fun:");
+            Console.WriteLine("Coding is not fun:");
             Console.WriteLine(statement);
+
 
         }
     }
