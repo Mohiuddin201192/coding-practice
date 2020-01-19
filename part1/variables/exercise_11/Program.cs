@@ -6,16 +6,16 @@ namespace exercise_11
     {
         public static void Main(string[] args)
         {
-            int dayCount = 90;
-            double hoursToLunch = 5;
-            string statement = "Are you sure?";
+            int dayCount = 300;
+            double hoursToLunch = 3.5;
+            string statement = "It sure is!";
 
             // DO NOT TOUCH THESE!
             Console.WriteLine("Days to summer:");
             Console.WriteLine(dayCount);
             Console.WriteLine("Hours to lunch:");
             Console.WriteLine(hoursToLunch);
-            Console.WriteLine("Coding is not fun:");
+            Console.WriteLine("Coding is fun:");
             Console.WriteLine(statement);
 
 
