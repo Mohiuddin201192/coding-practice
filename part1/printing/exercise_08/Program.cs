@@ -6,7 +6,10 @@ namespace exercise_08
     {
         public static void Main(string[] args)
         {
-            // Write your code here:
+            string question = "What is your name?";
+            string name = "Ada";
+            Console.WriteLine(question + "\n" + name);
+            Console.WriteLine("Hello Ada!");
 
         }
     }
