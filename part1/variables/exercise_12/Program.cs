@@ -6,7 +6,12 @@ namespace exercise_12
   {
     public static void Main(string[] args)
     {
-      // Write your code here:
+    
+      string statement = "Give a number!";
+      int value = 12;
+      Console.WriteLine( statement);
+      Console.WriteLine("You gave " + value);
+      
 
     }
   }
