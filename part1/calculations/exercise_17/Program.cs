@@ -7,12 +7,18 @@ namespace exercise_17
     public static void Main(string[] args)
     {
 
-      Console.WriteLine("Give the first number!");
-      string userIntut = Console.ReadLine();
-      int num1 = 1;
-      int num2 = 2;
-      int intvalue = Convert.ToInt32(userInput);
-      Console.WriteLine(num1 + num2 + intvalue);
+      Console.Write("Give the first number!\n");
+      string userinput = Console.ReadLine();
+      int intvalue1 = Convert.ToInt32(userinput);
+      Console.Write("Give the second number!\n");
+      string userinput1 = Console.ReadLine();
+      int intvalue2 = Convert.ToInt32(userinput1);
+      int sum = (intvalue1 + intvalue2);
+      Console.WriteLine("The sum is " + sum);
+
+
+    
+
 
 
     }
