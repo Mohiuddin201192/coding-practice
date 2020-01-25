@@ -9,13 +9,14 @@ namespace exercise_27
       Console.WriteLine("Give a number:");
       string number = Console.ReadLine();
       int value = Convert.ToInt32(number);
-      if (value >= 0)
+      if (value > 0)
 
       {
         Console.WriteLine("It is positive");
         
       }
-      if (value < 0)
+
+      else
       {
         Console.WriteLine("It is not positive");
       }
