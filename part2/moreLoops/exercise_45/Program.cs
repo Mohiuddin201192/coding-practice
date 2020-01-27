@@ -7,8 +7,21 @@ namespace exercise_45
     public static void Main(string[] args)
     {
 
-      // Write your code here:
-
+    
+    
+    int value = Convert.ToInt32(Console.ReadLine());
+    while(true)
+    {
+      Console.WriteLine(value);
+      if (value >= 4)
+      {
+        break;
+      }
+      value = value + 1;
+      
+    }
+    
+    
     }
   }
 }
