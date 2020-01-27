@@ -17,7 +17,7 @@ namespace exercise_45
       {
         break;
       }
-      value = value + 1;
+      value++;
       
     }
     
