@@ -8,16 +8,12 @@ namespace exercise_45
     {
 
     
-    
+    int num = 0;
     int value = Convert.ToInt32(Console.ReadLine());
-    while(true)
+    while(num <= value)
     {
-      Console.WriteLine(value);
-      if (value >= 4)
-      {
-        break;
-      }
-      value++;
+      Console.WriteLine(num);
+      num++;
       
     }
     
