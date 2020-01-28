@@ -19,7 +19,7 @@ namespace exercise_47
       while (value <= num2)
       {
         Console.WriteLine(value);
-        value--;
+        value++;
         
       }
       
