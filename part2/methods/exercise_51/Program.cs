@@ -15,11 +15,11 @@ namespace exercise_51
 
     // Write your method here:
     public static void PrintUntilNumber(int num){
-    int digit = 1;
-    while (digit <= num)  
+    
+    while (num > 0)  
     {
-      Console.WriteLine(digit);
-      digit++;
+      Console.WriteLine(num);
+      num--;
     }
     }
 
