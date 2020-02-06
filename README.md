@@ -1,3 +1,7 @@
+## How to run exercises
+
+In the exercise folder, run the command **dotnet run** to run your program. To see if your program does what it's supposed to, run **dotnet test**. When all the tests pass, you have done the exercise as intended.
+
 ## How to return your exercises
 
 You return your exercises by pushing your answers to your personal repository.
@@ -8,12 +12,12 @@ The deadlines are every Sunday.
 |:--:|:------------------:|:----------|
 | 1  | 26.01.2020 at 23:59| 40        |
 | 2  | 02.02.2020 at 23:59| 31        |
-| 3  | 09.02.2020 at 23:59| XX        |
+| 3  | 09.02.2020 at 23:59| 31        |
 | 4  | 16.02.2020 at 23:59| XX        |
 | 5  | 23.02.2020 at 23:59| XX        |
 | 6  | 01.03.2020 at 23:59| XX        |
 
-The exercises might be in multiple sections **in the instructions**, to make it easier to comprehend. In the end, you should still have **only one program per exercise** to return in such case.  
+The exercises might be in multiple sections **in the instructions**, to make it easier to comprehend. In the end, you should still have **only one program per exercise** to return in such case.   
 
 Each section is counted separately, when calculating the total amount of exercises done. That is why they are calculated in the total of the table above.
 
@@ -1713,4 +1717,417 @@ Mary was found!
 Search for?
 > Logan
 Logan was not found!
+```
+
+#### Exercise_75
+
+Create the method **public static void PrintNumbersInRange(List\<int\> numbers, int lowerLimit, int upperLimit)** in the exercise template. The method prints the numbers in the given list whose values are in the range [lowerLimit, upperLimit]. A few examples of using the method are supplied below.
+
+```cs
+List<int> numbers = new List<int>();
+numbers.Add(3);
+numbers.Add(2);
+numbers.Add(6);
+numbers.Add(-1);
+numbers.Add(5);
+numnbers.Add(1);
+
+Console.WriteLine("The numbers in the range [0, 5]");
+PrintNumbersInRange(numbers, 0, 5);
+
+Console.WriteLine("The numbers in the range [3, 10]");
+PrintNumbersInRange(numbers, 3, 10);
+```
+
+```console
+The numbers in the range [0, 5] 
+3 
+2 
+5 
+1 
+The numbers in the range [3, 10] 
+3 
+6 
+5
+```
+
+#### Exercise_76
+
+
+Create the method **public static int Sum(List\<int\> numbers)** in the exercise template. The method is to **return** the sum of the numbers in the parameter list.
+
+```cs
+List<int> numbers = new List<int>();
+numbers.Add(3);
+numbers.Add(2);
+numbers.Add(6);
+numbers.Add(-1);
+Console.WriteLine(Sum(numbers));
+
+numbers.Add(5);
+numbers.Add(1);
+Console.WriteLine(Sum(numbers));
+```
+
+```console
+10
+16
+```
+
+### Exercise_77
+
+Create the method **public static void RemoveLast(List\<string\> strings)** in the exercise template. The method should remove the last value in the list it receives as a parameter. If the list is empty, the method does nothing.
+
+```cs
+List<string> strings = new List<string>();
+
+strings.Add("First");
+strings.Add("Second");
+strings.Add("Third");
+
+// Remember, this is how you print all the items in a list
+strings.ForEach(Console.WriteLine);
+
+RemoveLast(strings);
+RemoveLast(strings);
+
+strings.ForEach(Console.WriteLine);
+```
+
+## Arrays
+
+#### Exercise_78
+
+The exercise template already contains a program, that creates an array and prints the values of the array twice. Modify the program to do following: After the first printing, the program should ask for two indices from the user. The values in these two indices should be swapped, and in the end the values of the array should be printed once again.
+
+```console
+1 
+3 
+5 
+7 
+9
+
+Give two indices to swap: 
+> 2 
+> 4
+
+1 
+3 
+9 
+7 
+5
+```
+
+```console
+1 
+3 
+5 
+7 
+9
+
+Give two indices to swap: 
+> 0 
+> 1
+
+3 
+1 
+5 
+7 
+9
+```
+
+You can assume the array to contain the given indices.   
+
+Tip! You'll need an additional variable to store one of the values for little while.
+
+#### Exercise_79
+
+The exercise template has already an array containing numbers. Complete the program to ask the user for a number to search in the array. If the array contains the given number, the program tells the index containing the number. If the array doesn't contain the given number, the program will tell the number wasn't found.
+
+```console
+Search for? 
+> 3 
+3 is at index 4.
+```
+
+```console
+Search for? 
+> 7 
+7 is at index 7.
+```
+
+```console
+Search for? 
+> 22 
+22 was not found.
+```
+
+#### Exercise_80
+
+The template has a method **public static int SumOfNumbersInArray(int[] array)**. Complete the method so, that it computes and returns the sum of the numbers in the array it receives as parameter.
+
+You can try out the computation of the sum with this example:
+
+```cs
+int[] numbers = {5, 1, 3, 4, 2};
+int sum = SumOfNumbersInArray(numbers);
+Console.WriteLine(sum);
+```
+
+```console
+15
+```
+
+#### Exercise_81
+
+Complete the method **public static void PrintNeatly(int[] array)** in the template to make it print the numbers of the array it receives more neatly. There should be a whitespace and a comma between each number. don't put a comma after the last number.
+
+Print the numbers on one line using **Console.Write**.
+
+You can try out your printing with this example:
+
+```cs
+int[] array = {5, 1, 3, 4, 2};
+PrintNeatly(array);
+```
+
+```console
+5, 1, 3, 4, 2
+```
+
+#### Exercise_82
+
+Complete the method **public static void PrintArrayInStars(int[] array)** in the template to make it print a row of stars for each number in the array. The amount of stars on each row is defined by the corresponding number in the array.
+
+You can try out the printing with this example:
+
+```cs
+int[] array = {5, 1, 3, 4, 2};
+PrintArrayInStars(array);
+```
+
+```
+***** 
+* 
+*** 
+**** 
+**
+```
+
+The 0th element of the array is 5, so the first line has 5 stars. The next one has 1 etc.
+
+## Strings
+
+#### Exercise_83
+
+Write a program, that reads a string from the user and then prints it three times.
+
+```console
+Give a word: cake
+
+cakecakecake
+```
+
+NOTICE! The program should ask for only one string. Don't use a loop here.
+
+#### Exercise_84
+
+Write a program that asks the user for a string. If the user writes the string "true", the program prints "You got it right!", otherwise it prints "Try again!".
+
+```console
+Give a string: true 
+You got it right!
+```
+
+
+```console
+Give a string: trueish 
+Try again!
+```
+
+#### Exercise_85
+
+write a program that recognizes the following users:
+
+
+|username	|password|
+|--|--|
+|alex|	sunshine|
+|emma|	haskell|
+
+The program either shows a login message or informs of incorrect username or password.
+
+```console
+Enter username: 
+>alex 
+Enter password: 
+> sunshine 
+You have successfully logged in!
+```
+```console
+Enter username: 
+> emma 
+Enter password: 
+> haskell 
+You have successfully logged in!
+```
+
+```console
+Enter username: 
+> alex 
+Enter password: 
+> haskell 
+Incorrect username or password!
+```
+
+NOTICE! In read life login should not be implemented like this! This is just an exercise.
+
+#### Exercise_86
+
+Write a program that reads strings from the user. If the input is empty, the program stops reading input and halts. For each non-empty input it splits the string input by whitespaces and prints each part of the string on a new line.
+
+```console
+> once upon a time 
+once 
+upon 
+a 
+time 
+> a little program 
+a 
+little 
+program 
+> halted 
+halted
+>
+```
+
+#### Exercise_87
+
+Write a program, that reads user input until an empty line. For each non-empty string, the program splits the string by spaces and then prints the pieces that contain **av**, each on a new line.
+
+```console
+> navy blue shirt
+navy
+> Do you have a favourite flavour
+have
+favourite
+flavour
+> was that a cat
+>
+```
+
+Tip! Strings have a Contains method, which tells if a string contains another string. It works like this:
+
+```cs
+string text = "volcanologist";
+
+if (text.Contains("can")) 
+{
+  Console.WriteLine("can was found");
+}
+
+if (!text.Contains("tin")) 
+{
+  Console.WriteLine("tin wasn't found");
+}
+```
+
+```console
+can was found 
+tin wasn't found
+```
+
+#### Exercise_88
+
+Write a program, that reads user input until an empty line. For each non-empty line the program splits the string by spaces and prints the first part of the string.
+
+```console
+> one two three four 
+one 
+> this is a very important message 
+this
+>
+```
+
+#### Exercise_89
+
+Write a program, that reads user input until an empty line. For each non-empty line the program splits the string by spaces and prints the last part of the string.
+
+```console
+> one two three four 
+four 
+> this is a very important message 
+message
+>
+```
+
+Tip! You can find out the length of the array like this:
+
+```cs
+string[] parts = {"one", "two", "three"};
+Console.WriteLine("Number of parts: " + parts.Length);
+```
+
+```console
+Number of parts: 3
+```
+
+#### Exercise_90
+
+Write a program that reads names and ages from the user until an empty line is entered. The name and age are separed by a comma.
+
+After reading the program prints the age of the oldest person. You can assume, that the user enters at least one person, and that one of the users is older than the others.
+
+```console
+> sebastian,2 
+> lucas,2
+> lily,1
+> hanna,5
+> gabriel,10
+>
+Age of the oldest: 10
+```
+
+#### Exercise_91
+
+Write a program that reads names and ages from the user until an empty line is entered. The name and age are separed by a comma.
+
+After reading the program prints the name of the oldest person. You can assume, that the user enters at least one person, and that one of the users is older than the others.
+
+```console
+> sebastian,2 
+> lucas,2
+> lily,1
+> hanna,5
+> gabriel,10
+>
+Name of the oldest: gabriel
+```
+
+#### Exercise_92
+
+In this exercise you'll be asked for the length of the names. You can find out the length of a string with Length property:
+
+```cs
+string word = "equisterian";
+int length = word.Length;
+Console.WriteLine("The length of the word" + word + " is " + length);
+```
+
+```console
+The length of the word equisterian is 11
+```
+Write a program that reads names and birth years from the user until an empty line is entered. The name and birth year are separed by a comma.
+
+After that the program prints the longest name and the highest age. If multiple names are equally longest, you can print any of them. You can assume the user to enter at least one person, and the current year to be 2020.
+
+```console
+> sebastian,2017 
+> lucas,2017 
+> lily,2017 
+> hanna,2014 
+> gabriel,2009
+>
+Longest name: sebastian 
+Highest age: 11
 ```
