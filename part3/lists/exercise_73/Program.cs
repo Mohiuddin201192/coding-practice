@@ -16,6 +16,23 @@ namespace exercise_73
           break;
         }
         list.Add(input);
+
+      }
+      for (int = 0; i < list.Count; i++)
+      {
+        Sum +=list[i];
+      }
+      foreach( int number in list) {
+        sum += number;
+      }
+      int index = 0;
+      while (index < list.Count)
+      {
+        sum = sum + list[index];
+        index++;
+      }
+      {
+          
       }
 
     }

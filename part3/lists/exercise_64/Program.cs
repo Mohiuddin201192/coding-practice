@@ -22,6 +22,8 @@ namespace exercise_64
       {
         Console.WriteLine(line);
       }
+      Console.WriteLine("There are " + (lines.Count-1) + " indexes in the list");
+      Console.WriteLine(lines[lines.Count-1]);
 
     }
 
