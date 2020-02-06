@@ -21,7 +21,7 @@ namespace exercise_74
        String searchable = Console.ReadLine();
        if (list.Contains(searchable))
        {
-         Console.WriteLine(searchable + "was found!");
+         Console.WriteLine(searchable + " was found!");
        }
        else
        {
