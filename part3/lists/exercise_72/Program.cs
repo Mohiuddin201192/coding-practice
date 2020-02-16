@@ -16,6 +16,7 @@ namespace exercise_72
           break;
         }
         list.Add(input);
+      }
         //start with the first from the list
         int smallest = list[0];
         // go through our list
@@ -29,7 +30,16 @@ namespace exercise_72
           }
         }
         // tell what smallest number is
-        Console.WriteLine("Smallest number : ")
+        Console.WriteLine("Smallest number: " + smallest);
+        for(int i = 0; i <list.Count; i++)
+        {
+          if (list[i] == smallest)
+
+          {
+            Console.WriteLine("Found at index: " + i);
+          }  
+        }
+
 
     }
   }
