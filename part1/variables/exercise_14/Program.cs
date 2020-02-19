@@ -6,8 +6,9 @@ namespace exercise_14
   {
     public static void Main(string[] args)
     {
+      bool valid = true;
       Console.WriteLine("Give me the truth!");
-      // Write your code here:
+      Console.WriteLine(valid);
 
     }
   }

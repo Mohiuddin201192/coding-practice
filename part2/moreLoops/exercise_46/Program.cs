@@ -7,7 +7,18 @@ namespace exercise_46
     public static void Main(string[] args)
     {
 
-      // Write your code here:
+
+      int value = Convert.ToInt32(Console.ReadLine());
+    while(true)
+    {
+      Console.WriteLine(value);
+      if (value >= 100)
+      {
+        break;
+      }
+      value = value + 1;
+      
+      }
 
     }
   }

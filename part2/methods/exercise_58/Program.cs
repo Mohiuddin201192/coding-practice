@@ -11,6 +11,20 @@ namespace exercise_58
     }
 
     // Write your method here:
+    public static int Smallest(int num1, int num2)
+    {
+      int small = 0;
+      if (num1 < num2)
+      {
+        small = num1;
+      }
+      else
+      {
+        small = num2;
+      }
+      return small;
+
+    }
     
   }
 }

@@ -17,6 +17,16 @@ namespace exercise_74
         }
         list.Add(input);
       }
+       Console.WriteLine("Search for?");
+       String searchable = Console.ReadLine();
+       if (list.Contains(searchable))
+       {
+         Console.WriteLine(searchable + " was found!");
+       }
+       else
+       {
+           Console.WriteLine(searchable + " was not found!");
+       }
       
     }
   }

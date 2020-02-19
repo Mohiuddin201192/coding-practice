@@ -6,7 +6,7 @@ namespace exercise_03
     {
         public static void Main(string[] args)
         {
-            // Your code here:
+            Console.WriteLine("Once upon a time /n was falling apart /nNow I'm falling apart");
         }
     }
 }

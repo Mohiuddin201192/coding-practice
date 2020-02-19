@@ -7,11 +7,28 @@ namespace exercise_51
     public static void Main(String[] args)
     {
       // Call your method here:
+      PrintUntilNumber(5);
+
 
 
     }
 
     // Write your method here:
+    public static void PrintUntilNumber(int num){
+    
+    while (num > 0)  
+    {
+      Console.WriteLine(num);
+      num--;
+    }
+    }
+
+
+
+
+
+
+
 
   }
 }
