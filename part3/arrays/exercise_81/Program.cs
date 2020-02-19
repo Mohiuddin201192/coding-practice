@@ -25,6 +25,7 @@ namespace exercise_81
       else 
       {
         Console.Write(array[i] + "\n");
+        
       }
 
     }
