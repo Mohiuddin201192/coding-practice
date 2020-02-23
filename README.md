@@ -1,10 +1,18 @@
+## Where to begin
+
+Before you do this course, it is advised to do the course for command line and version control first: https://centria.github.io/console/. This gives you tools to learn how to create your own Git repository and how to use it.
+
+The course material for **this course** is at https://centria.github.io/basic-coding/. Do read the material before trying to do the exercises.
+
+To do the exercises, you need [Dotnet Core](https://dotnet.microsoft.com/download) and a decent editor, such as [Visual Studio Code](https://code.visualstudio.com/). You can use any editor, but the instructions are written with VSC in mind.
+
 ## How to run exercises
 
 In the exercise folder, run the command **dotnet run** to run your program. To see if your program does what it's supposed to, run **dotnet test**. When all the tests pass, you have done the exercise as intended.
 
 ## How to return your exercises
 
-You return your exercises by pushing your answers to your personal repository.
+You return your exercises by pushing your answers to your personal repository. The repository link is to be sent to the supervising teacher.
 
 The deadlines are every Sunday.
 
@@ -13,9 +21,11 @@ The deadlines are every Sunday.
 | 1  | 26.01.2020 at 23:59| 40        |
 | 2  | 02.02.2020 at 23:59| 31        |
 | 3  | 09.02.2020 at 23:59| 31        |
-| 4  | 16.02.2020 at 23:59| XX        |
-| 5  | 23.02.2020 at 23:59| XX        |
-| 6  | 01.03.2020 at 23:59| XX        |
+| 4  | 16.02.2020 at 23:59| 29        |
+| 5  | 01.03.2020 at 23:59| 22        |
+| 6  | 08.03.2020 at 23:59| XX        |
+
+NOTICE! Ther has been extension to deadlines 5 and 6.
 
 The exercises might be in multiple sections **in the instructions**, to make it easier to comprehend. In the end, you should still have **only one program per exercise** to return in such case.   
 
@@ -1426,7 +1436,7 @@ Modify the program so that instead of the first value, the program prints the su
 
 #### Exercise_64
 
-There is a program that uses a list in the exercise template. Modify it so that its execution always produces the error ArgumentOutRangeException. The user should not have to give any inputs to the program (e.g. write something on the keyboard)
+There is a program that uses a list in the exercise template. Modify it so that its execution always produces the error **ArgumentOutRangeException**. The user should not have to give any inputs to the program (e.g. write something on the keyboard)
 
 #### Exercise_65
 
@@ -1794,6 +1804,14 @@ RemoveLast(strings);
 strings.ForEach(Console.WriteLine);
 ```
 
+```console
+First
+Second
+Third
+First
+```
+
+
 ## Arrays
 
 #### Exercise_78
@@ -2111,7 +2129,7 @@ In this exercise you'll be asked for the length of the names. You can find out t
 ```cs
 string word = "equisterian";
 int length = word.Length;
-Console.WriteLine("The length of the word" + word + " is " + length);
+Console.WriteLine("The length of the word " + word + " is " + length);
 ```
 
 ```console
@@ -2130,4 +2148,1724 @@ After that the program prints the longest name and the highest age. If multiple 
 >
 Longest name: sebastian 
 Highest age: 11
+```
+
+# Part 4
+
+## Object Oriented Programming
+
+When creating own classes, make sure to include the correct **namespace** so you can reference it from your Program.cs file. We'll get to namespaces later. For now, whenever you create a new class, **use the folder name as the namespace**.
+
+You can test your own classes in the Main if you want to, but it is not necessary. It does, of course, help you understand your code, and the exercises might include some examples, how the classes should work.
+
+#### Exercise_93
+
+The exercise template comes with a ready-made class named Account. The Account object represents a bank account that has balance (i.e. one that has some amount of money in it). The accounts are used as follows:
+
+```cs
+Account heikkisAccount = new Account("Heikki's account", 100.00);
+Account heikkisSwissAccount = new Account("Heikki's account in Switzerland", 1000000.00);
+
+Console.WriteLine("Intial state");
+Console.WriteLine(heikkisAccount);
+Console.WriteLine(heikkisSwissAccount);
+
+heikkisAccount.Withdrawal(20);
+Console.WriteLine("The balance of Heikki's account is now: " + heikkisAccount.balance);
+heikkisSwissAccount.Deposit(200);
+Console.WriteLine("The balance of Heikki's other account is now: " + heikkisSwissAccount.balance);
+
+Console.WriteLine("End state");
+Console.WriteLine(heikkisAccount);
+Console.WriteLine(heikkisSwissAccount);
+```
+
+Write a program that 
+- creates an account with a balance of 100.0, 
+- deposits 20.0 in it, 
+- and finally prints the balance. 
+
+```console
+120
+```
+
+NOTICE! Perform all the operations in this exact order.
+
+#### Exercise_94
+
+The Account from the previous exercise class is also available in this exercise.
+
+Write a program that:
+
+- Creates an account named "Heikki's account" with the balance 1000.0
+- Creates an account named "Personal account" with the balance 0
+- Withdraws 100.0 from Heikki's account
+- Deposits 100.0 to its own personal account
+- Prints account information (ToString) on both, first Heikki's, then Personal:
+
+```console
+Heikki's account balance: 900
+Personal account balance: 100
+```
+
+#### Exercise_95
+
+In this exercise, you'll practice creating a class.
+
+[**CHECK THIS MATERIAL FOR HELP**](https://centria.github.io/basic-coding/part4/1/#creating-a-new-class)
+
+Name the class **Dog** (and the file **Dog.cs**)
+
+You have now created a class called **Dog**. 
+Add the variables 
+- private string name,
+- private string breed and 
+- private int age   
+to the class. As a class diagram, the class looks like this:
+
+![Dog class diagram](https://github.com/centria/coding-exercises/raw/master/assets/images/dogclass.jpg)
+
+NOTICE! You have to give your dog **namespace exercise_95** for it to function!
+
+#### Exercise_96
+
+Create a class named **Room** (and file **Room.cs**). Add the variables **private string code** and **private int seats** to the class. Then create a constructor **public Room(string classCode, int numberOfSeats)** through which values are assigned to the instance variables.
+
+![Room class diagram](https://github.com/centria/coding-exercises/raw/master/assets/images/roomclass.jpg)
+
+NOTICE! You have to give your room **namespace exercise_96** for it to function!
+
+#### Exercise_97
+
+Create a class named **Whistle**. Add the variable **private string sound** to the class. After that, create the constructor **public Whistle(string whistleSound)**, which is used to create a new whistle that's given a sound. After that, create a method **public void Sound()** which prints out the sound (using Console.WriteLine).
+
+```cs
+Whistle duckWhistle = new Whistle("Kvaak");
+Whistle roosterWhistle = new Whistle("Peef");
+
+duckWhistle.Sound();
+roosterWhistle.Sound();
+duckWhistle.Sound();
+```
+
+```console
+Kvaak 
+Peef 
+Kvaak
+```
+
+#### Exercise_98
+
+Create a class **Product** that represents a store product. The product should have a **price (double)**, a **quantity (int)** and a **name (string)**.
+
+The class should have:
+
+- the constructor **public Product(string name, double price, int quantity)**
+- a method **public void PrintProduct()** that prints product information in the following format:
+
+```console
+Banana: price 1.1: 13 pcs
+```
+
+The output above is based on the product being assigned the name banana, with a price of 1.1, and a quantity of 13 .
+
+#### Exercise_99
+
+This exercise consists of multiple sections. Each section corresponds to one exercise point.
+
+The exercise template comes with a partially executed class DecreasingCounter:
+
+```cs
+using System;
+
+namespace exercise_99
+{
+  public class DecreasingCounter
+  {
+    private int value;   // a variable that remembers the value of the counter
+
+    public DecreasingCounter(int initialValue)
+    {
+      this.value = initialValue;
+    }
+
+    public void PrintValue()
+    {
+      Console.WriteLine("value: " + this.value);
+    }
+
+    public void decrement()
+    {
+      // write the method implementation here
+      // the aim is to decrement the value of the counter by one
+    }
+
+    // and the other methods go here
+  }
+}
+```
+
+The following is an example of how the main program uses the decreasing counter:
+
+```cs
+public static void Main(string[] args)
+{
+  DecreasingCounter counter = new DecreasingCounter(10);
+  counter.PrintValue();
+
+  counter.Decrement();
+  counter.PrintValue();
+
+  counter.Decrement();
+  counter.PrintValue();
+}
+```
+
+```console
+value: 10
+value: 9
+value: 8
+```
+
+##### Section 1 : Implementation of the **Decrement() method**
+
+Implement the **Decrement()** method in the class body in such a way that it decrements the value variable of the object it's being called on by one. Once you're done with the **Decrement()** method, the main program of the previous example should work to produce the example output.
+
+##### Section 2 : The counter's value cannot be negative
+
+Improve the **Decrement()** in such a way that the counter's value never becomes negative. This means that if the value of the counter is 0, it cannot be decremented. A conditional statement is useful here.
+
+```cs
+public static void Main(string[] args)
+{
+
+  DecreasingCounter counter = new DecreasingCounter(2);
+  counter.PrintValue();
+
+  counter.Decrement();
+  counter.Decrement();
+  counter.PrintValue();
+
+  counter.Decrement();
+  counter.PrintValue();
+}
+```
+
+```console
+value: 2
+value: 0
+value: 0
+```
+
+##### Section 3: Resetting the counter value
+
+Create the method **public void Reset()** for the counter that resets the value of the counter to 0. For example:
+
+```cs
+public static void Main(string[] args)
+{
+
+  DecreasingCounter counter = new DecreasingCounter(20);
+  counter.PrintValue();
+
+  counter.Reset();
+  counter.PrintValue();
+}
+```
+
+```console
+value: 20
+value: 0
+```
+
+#### Exercise_100
+
+Create the class **Debt** that has double-typed instance variables of **balance** and **interestRate**. The balance and the interest rate are passed to the constructor as parameters **public Debt(double initialBalance, double initialInterestRate)**.
+
+In addition, create the methods **public void PrintBalance()** and **public void WaitOneYear()** for the class. The method PrintBalance prints the current balance, and the WaitOneYear method grows the debt amount.
+
+The debt is increased by multiplying the balance by the interest rate.
+
+The class should do the following:
+
+```cs
+public static void Main(string[] args)
+{
+
+  Debt mortgage = new Debt(120000.0, 1.01);
+  mortgage.PrintBalance();
+
+  mortgage.WaitOneYear();
+  mortgage.PrintBalance();
+
+  // Wait 20 years
+  int years = 0;
+  while (years < 20)
+  {
+    mortgage.WaitOneYear();
+    years = years + 1;
+  }
+
+  mortgage.PrintBalance();
+}
+```
+
+The example above illustrates the development of a mortgage with an interest rate of one percent.
+
+Prints:
+
+```console
+120000
+121200
+147887.0328416936
+```
+
+### Exercise_101
+
+Create a class called **Dalmatian**. The dalmatian has instance variables **string name** and **int spots**. Both are set in the **public Dalmatian(string name, int spots)** constructor. Also, give the variables ability for get and set:
+**Make the variables public rather than private, and add { get; set; } on the declaring lines!**
+
+```cs
+Dalmatian spotty = new Dalmatian("Spot", 306);
+Console.WriteLine(spotty.name + " is a very good dog. He has " + spotty.spots + " darker spots in his fur");
+```
+
+```console
+Spot is a very good dog. He has 306 darker spots in his fur
+```
+
+#### Exercise_102
+
+Create the class **Gauge**. The gauge has the instance **public int value**, a **constructor without parameters** (sets the initial value of the meter variable to 0), and also the following three methods:
+
+- Method **public void Increase()** grows the value instance variable's value by one. It does not grow the value beyond five.
+- Method **public void Decrease()** decreases the value instance variable's value by one. It does not decrease the value to negative values.
+- Method **public bool Full()** returns **True** if the instance variable value has the value five. Otherwise, it returns **False**.
+
+Also, give the value ability for get and set:
+**Make the value public rather than private, and add { get; set; } on the declaring lines!**
+
+An example of the class in use.
+
+```cs
+public static void Main(string[] args)
+{
+  Gauge g = new Gauge();
+
+  while (!g.Full())
+  {
+    Console.WriteLine("Not full! Value: " + g.value);
+    g.Increase();
+  }
+
+  Console.WriteLine("Full! Value: " + g.value);
+  g.Decrease();
+  Console.WriteLine("Not full! Value: " + g.value);
+}
+```
+
+```console
+Not full! Value: 0
+Not full! Value: 1
+Not full! Value: 2
+Not full! Value: 3
+Not full! Value: 4
+Full! Value: 5
+Not full! Value: 4
+```
+
+### Exercise_103
+
+The exercise template defines an Agent class, having a first name and last name. The Main method tries to print the introduction for mister Bond, but with no luck. This is what is should do:
+
+```cs
+public static void Main(string[] args)
+{
+  Agent bond = new Agent("James", "Bond");
+  Console.WriteLine(bond);
+
+  Agent bourne = new Agent("Jason", "Bourne");
+  Console.WriteLine(bond);
+}
+```
+
+```console
+My name is Bond. James Bond.
+My name is Bourne. Jason Bourne.
+```
+
+Agent's ToString now returns an empty string. Fix it to introduce international agents in their proper form.
+
+#### Exercise_104
+
+Create a class **Multiplier** that has a:
+
+Constructor **public Multiplier(int number)**.
+Method **public int Multiply(int number)** which returns the value number passed to it multiplied by the number provided to the constructor.
+**You also need to create an instance variable in this exercise.** When you call the method Multiply, store the changed value into the instance variable!
+
+An example of the class in use:
+
+```cs
+public static void Main(string[] args)
+{
+  Multiplier multiplyByThree = new Multiplier(3);
+
+  Console.WriteLine("multiplyByThree.Multiply(2): " + multiplyByThree.Multiply(2));
+
+  Multiplier multiplyByFour = new Multiplier(4);
+
+  Console.WriteLine("multiplyByFour.Multiply(2): " + multiplyByFour.Multiply(2));
+  Console.WriteLine("multiplyByThree.Multiply(1): " + multiplyByThree.Multiply(1));
+  Console.WriteLine("multiplyByFour.Multiply(1): " + multiplyByFour.Multiply(1));
+  Console.WriteLine("multiplyByFour.Multiply(3): " + multiplyByFour.Multiply(3));
+}
+```
+
+```console
+multiplyByThree.Multiply(2): 6
+multiplyByFour.Multiply(2): 8
+multiplyByThree.Multiply(1): 6
+multiplyByFour.Multiply(1): 8
+multiplyByFour.Multiply(3): 24
+```
+
+NOTICE! The value stored in the objects is changed during the first calls!  
+The calculations are actually ( in order):  
+3 * 2 = 6  
+4 * 2 = 8  
+6 * 1 = 6  
+8 * 1 = 8  
+8 * 3 = 24
+
+#### Exercise_105
+
+The exercise template includes class **Statistics**
+
+```cs
+namespace exercise_105
+{
+  public class Statistics
+  {
+    public int count {get; set;}
+    public int sum { get; set; }
+
+    public NumberStatistics()
+    {
+      // initialize the variable count here
+    }
+
+    public void AddNumber(int number) {
+        // write code here
+    }
+  }
+}
+```
+
+The following program introduces the class' use:
+
+```cs
+Statistics statistics = new Statistics();
+statistics.AddNumber(3);
+statistics.AddNumber(5);
+statistics.AddNumber(1);
+statistics.AddNumber(2);
+Console.WriteLine("Count: " + statistics.count);
+Console.WriteLine("Sum: " + statistics.sum);
+```
+
+```console
+Count: 4
+Sum: 11
+```
+
+Expand the program as follows:
+- When a number is added, **count** is increased by one
+- When a number is added, **sum** is increased by the number's value
+
+#### Exercise_106
+
+In this exercise series, a class called PaymentCard is created which aims to mimic a cafeteria's payment process.
+
+The template includes the **Program.cs** file. You have to create the **PaymentCard.cs** yourself.
+
+- Add a new class to the project called **PaymentCard** (by creating the file mentioned above).
+- Create the PaymentCard object's constructor, which is passed the opening balance of the card, and which then stores that balance in the object's internal variable. 
+- Write the ToString method, which will return the card's balance in the form **"The card has a balance of X euros"**.
+
+Here is the template for the PaymentCard:
+
+```cs
+namespace exercise_106
+{
+  public class PaymentCard
+  {
+    private double balance;
+
+    public PaymentCard(double openingBalance)
+    {
+      // write code here
+    }
+
+    public override string ToString()
+    {
+      // write code here
+    }
+  }
+}
+```
+The following main program tests the class:
+
+```cs
+public static void Main(string[] args)
+{
+  PaymentCard card = new PaymentCard(50);
+  Console.WriteLine(card);
+}
+```
+
+```console
+The card has a balance of 50 euros
+```
+
+#### Exercise_107
+
+Expand your answer from the exercise 106 by adding two methods:
+- Method **public void EatLunch()**
+- Method **public void DrinkCoffee()**
+
+The method **EatLunch** should decrease the card's balance by 10.60 euros. The method **DrinkCoffee** should decrease the card's balance by 2.0 euros.
+
+The following main program tests the class:
+
+```cs
+public static void Main(string[] args)
+{
+  PaymentCard card = new PaymentCard(50);
+  Console.WriteLine(card);
+
+  card.EatLunch();
+  Console.WriteLine(card);
+  
+  card.DrinkCoffee();
+  Console.WriteLine(card);
+}
+```
+
+```console
+The card has a balance of 50 euros
+The card has a balance of 39.4 euros
+The card has a balance of 37.4 euros
+```
+
+#### Exercise_108
+
+Expand your previous answers, so that when an item is bought the balance is checked. If there is not enough money to buy, the balance does not change.
+
+```cs
+public static void Main(string[] args)
+{
+  PaymentCard card = new PaymentCard(10);
+  Console.WriteLine(card);
+
+  card.EatLunch();
+  Console.WriteLine(card);
+  
+  card.DrinkCoffee();
+  Console.WriteLine(card);
+}
+```
+
+```console
+The card has a balance of 10 euros
+The card has a balance of 10 euros
+The card has a balance of 8 euros
+```
+
+Notice how EatLunch did not change the balance, as there was not enough money. DrinkCoffee still worked, as it should.
+
+#### Exercise_109
+
+Expand your previous answers, so that you can charge money on your card:
+
+```cs
+public void AddMoney(double amount) {
+    // write code here
+}
+```
+
+The purpose of the method is to increase the card's balance by the amount of money given as a parameter. However, the card's balance may not exceed 150 euros. As such, if the amount to be topped up exceeds this limit, the balance should, in any case, become exactly 150 euros.
+
+The following main program tests the class:
+
+```cs
+public static void Main(string[] args)
+{
+  PaymentCard card = new PaymentCard(100);
+  Console.WriteLine(card);
+
+  card.AddMoney(49.99);
+  Console.WriteLine(card);
+
+  card.AddMoney(10000.0);
+  Console.WriteLine(card);
+
+  card.AddMoney(-10);
+  Console.WriteLine(card);
+}
+```
+
+```console
+The card has a balance of 100 euros
+The card has a balance of 149.99 euros
+The card has a balance of 150 euros
+The card has a balance of 150 euros
+```
+
+Notice! You cannot add negative money!
+
+## Objects in list
+
+#### Exercise_110
+
+Implement the class **Main** described here. **Do not modify the class Item.**
+
+Write a program that reads names of items from the user. If the name is empty, the program stops reading. Otherwise, the given name is used to create a new item, which you will then add to the items list.
+
+Having read all the names, print all the items by using the ToString method of the Item class. The implementation of the Item class keeps track of the time of creation, in addition to the name of the item.
+
+NOTICE! The list has to be called "items" for the tests to work!
+
+Example print:
+```console
+Name: Hammer
+Name: Radio
+Name: Hot Potato
+Name: 
+
+Hammer (created at: 9.2.2020 13.48.16)
+Radio (created at: 9.2.2020 13.48.18)
+Hot Potato (created at: 9.2.2020 13.48.21)
+```
+
+#### Exercise_111
+
+The program described here should be implemented in the class Main. Do not modify the class PersonalInformation.
+
+After the user has entered the last set of details (they enter an empty first name), exit the repeat statement. 
+
+Print one empty line here for reading clarity.
+
+Then print the collected personal information so that each entered object is printed in the following format: first and last names separated by a space (you don't print the identification number). An example of the working program is given below:
+
+```console
+First name: 
+> Jean 
+Last name: 
+> Bartik 
+Identification number: 
+> 271224 
+First name: 
+> Betty 
+Last name: 
+> Holberton 
+Identification number: 
+> 070317 
+First name:
+>
+
+Jean Bartik 
+Betty Holberton
+```
+
+You can (and should) ask the identification number as a string.
+
+#### Exercise_112
+
+In the exercise template there is a ready-made class TelevisionProgram, representing a television program. The class has object variables name and duration, a constructor, and a few methods.
+
+Implement a program that begins by reading television programs from the user. When the user inputs an empty string as the name of the program, the program stops reading programs.
+
+After this the user is queried for a maximum duration. Once the maximum is given, the program proceeds to list all the programs whose duration is smaller or equal to the specified maximum duration.
+
+```console
+Name: Rick and Morty 
+Duration: 25 
+Name: Two and a Half Men 
+Duration: 30 
+Name: Love it or list it 
+Duration: 60 
+Name: House 
+Duration: 60
+Name:
+
+Program's maximum duration? 30 
+Rick and Morty, 25 minutes 
+Two and a Half Men, 30 minutes
+```
+
+#### Exercise_113
+
+This exercise is worth 2.
+
+Write a program that first reads book information from the user. The details to be asked for each book include the title, the number of pages, and the publication year. Entering an empty string as the name of the book ends the reading process.
+
+After this the user is asked for what is to be printed. If the user inputs "everything", all the details are printed: the book titles, the numbers of pages, and the publication years. However, if the user enters the string "title", only the book titles are printed. If something else than "everything" or "title" is given, the program should not print anything.
+
+- Implement the class Book.
+- Implement the functionality in the Main method.
+
+Example of how the program in Main should work:
+
+```console
+
+Name: To Kill a Mockingbird 
+Pages: 281 
+Publication year: 1960 
+Name: A Brief History of Time 
+Pages: 256 
+Publication year: 1988 
+Name: Beautiful Code 
+Pages: 593 
+Publication year: 2007 
+Name: The Name of the Wind 
+Pages: 662 
+Publication year: 2007 
+Name:
+
+What information will be printed? everything 
+To Kill a Mockingbird, 281 pages, 1960 
+A Brief History of Time, 256 pages, 1988 
+Beautiful Code, 593 pages, 2007 
+The Name of the Wind, 662 pages, 2007
+```
+
+```console
+Name: To Kill a Mockingbird 
+Pages: 281 
+Publication year: 1960 
+Name: A Brief History of Time 
+Pages: 256 
+Publication year: 1988 
+Name: Beautiful Code 
+Pages: 593 
+Publication year: 2007 
+Name: The Name of the Wind 
+Pages: 662 
+Publication year: 2007 
+Name:
+
+What information will be printed? title 
+To Kill a Mockingbird 
+A Brief History of Time 
+Beautiful Code 
+The Name of the Wind
+```
+
+## Files and reading data
+
+#### Exercise_114
+
+As a recap, a simple program of reading the input.
+
+Write a program that reads strings from the user until the user inputs the string "end". At that point, the program should print how many strings have been read. The string "end" should not be included in the number strings read. You can find some examples below of how the program works.
+
+```console
+> I 
+> have
+> a
+> feeling
+> that
+> I
+> have
+> written
+> this
+> wrong
+> before
+> end 
+11
+```
+
+```console
+> end 
+0
+```
+
+#### Exercise_115
+
+Write a program that reads strings from the user until the user inputs the string "end". As long as the input is not "end", the program should handle the input as an integer and print the cube of the number provided (i.e., number * number * number). Below are some sample outputs
+
+```console
+> 3 
+27 
+> -1 
+-1 
+> 11 
+1331 
+> end
+```
+
+```console
+end
+```
+
+Remember to convert to integer before calculation!
+
+#### Exercise_116
+
+Write a program that prints the contents of a file called "data.txt", such that each line of the file is printed on its own line.
+
+If the file content looks like so:
+
+In a world   
+Where code is built   
+
+Then the program should print the following:
+
+```console
+In a world
+Where code is built
+```
+
+#### Exercise_117
+
+Write a program that asks the user for a string, and then prints the contents of a file with a name matching the string provided. You may assume that the user provides a file name that the program can find. You do not have to worry about getting errors when the file does not exist.
+
+The exercise template contains the files "data.txt" and "song.txt", which you may use when testing the functionality of your program. The output of the program can be seen below for when a user has entered the string "song.txt". The content that is printed comes from the file "song.txt". Naturally, the program should also work with other filenames, assuming the file can be found.
+
+```console
+Which file should have its contents printed? 
+> song.txt 
+
+No option for duality 
+The old is where we come 
+Clockspeed is fast, but we'll survive 
+The new will overcome 
+We are challengers, not followers 
+We take the ball to build 
+Easy safe services 
+Are here to stay
+
+Value for society 
+Value for life 
+For you and me 
+Tieto is here allright!
+```
+
+#### Exercise_118
+
+The exercise template comes ready with functionality for the guest list application. It checks whether names entered by the user are on the guest list.
+
+However, the program is missing the functionality needed for reading the guest list. Modify the program so that the names on the guest list are read from the file.
+
+Name of the file: guestlist.txt
+
+```console
+Enter names, an empty line quits. 
+> Chuck Norris 
+The name is not on the list. 
+> Jack Baluer 
+The name is not on the list. 
+> Jack Bauer 
+The name is on the list. 
+> Jack Bower 
+The name is on the list.
+>
+Thank you!
+```
+
+NOTICE! The exercise template comes with two files, names.txt and other-names.txt, which have the following contents. Do not change the contents of the files!
+
+NOTICE2! The exercise expects you to have a **string names** where you store the file!
+
+names.txt:
+
+ada  
+arto  
+leena  
+test  
+heikki  
+   
+other-names.txt:
+  
+leo   
+jarmo   
+alicia  
+mike  
+potato  
+  
+# Part 5
+
+## Object oriented revision
+
+#### Exercise_119
+
+The exercise template comes with the **"ClockHand"** class described in the course material. Implement a **Timer** class based on the material's Clock class.
+
+The timer has two hands, one for hundredths of a second and one for seconds. As it progresses, the number of hundredths of a second grows by one. When the hand corresponding to hundredths of a second reaches a value of 100, its value is set to zero, and the number of seconds grows by one. In the same way, when the value of the hand corresponding to seconds reaches the value of sixty, its value is set to zero.
+
+- **public Timer()** creates a new timer.
+- **public override string ToString()** returns a string representation of the timer. The string representation should be in the form "seconds: hundredths of a second", where both the seconds and the hundredths of a second are represented by two numbers. For example, **"19:83"** would represent the time 19 seconds, 83 hundredths of a second.
+- **public void Advance()** moves the timer forward by a hundredth of a second.
+
+You can test out the timer's functionality in the main program whenever you like. The example code below provides you with a program where the timer is printed and it advances once every hundredth of a second.
+
+```cs
+static void Main(string[] args)
+{
+  // Create new timer
+  Timer timer = new Timer();
+  // Loop until you cancel the loop.
+  // You can cancel with the CTRL + C
+  while (true)
+  {
+    Console.WriteLine(timer);
+    timer.Advance();
+    // Some error proving, we'll talk about this later.
+    // Known as try-catch.
+    try
+    {
+      // Wait 100th of a second. 
+      // Sleep(1000) waits one second, if you want to test at slower pace.
+      System.Threading.Thread.Sleep(10);
+    }
+    // Other half of try-catch pair. 
+    catch (Exception e)
+    {
+      Console.WriteLine("Error happened: +" + e);
+    }
+  }
+}
+```
+
+#### Exercise_120
+
+Create a **Cube** class that represents a cube (i.e., a standard hexahedron). Create a **public Cube (int edgeLength)** constructor for the class, that takes the length of the cube's edge as its parameter.
+
+Make a **public int Volume()** method for the cube, which calculates and returns the cube's volume. The volume of the cube is calculated with the formula **edgeLength * edgeLength * edgeLength**. Moreover, make a **public override string ToString()** method for the cube, which returns a string representation of it. The string representation should take the form **"The length of the edge is l and the volume v"**, where l is the length and v the volume - both the length and volume must be represented as integers.
+
+#### Exercise_121
+
+[**The Karvonen method**](https://en.wikipedia.org/wiki/Heart_rate#Karvonen_method) allows you to calculate your target heart rate for physical exercise. The target heart rate is calculated with the formula **(maximum heart rate - resting heart rate) * (target heart rate percentage) + resting heart rate**, where the target heart rate is given as a percentage of the maximum heart rate.
+
+For example, if a person has a maximum heart rate of 200, a resting heart rate of 50, and a target heart rate of 75% of the maximum heart rate, the target heart rate should be about ((200-50) * (0.75) + 50), i.e., 162.5 beats per minute.
+
+Create an "exercise assistant" class called **Fitbyte**. Its constructor takes both an age and a resting heart rate as its parameters. The exercise assistant should provide a method **TargetHeartRate**, which is passed a number of type double as a parameter that represents a percentual portion of the maximum heart rate. The proportion is given as a number between zero and one. The class should have:
+
+- A constructor **public Fitbyte(int age, int restingHeartRate)**
+- A method **public double TargetHeartRate(double percentageOfMaximum)** that calculates and returns the target heart rate.
+
+Use the formula **206.3 - (0.711 * age)** to calculate the maximum heart rate.
+Use the formula **(maxHeartRate - restingHeartRate) * percentageOfMaximum + restingHeartRate** to calculate the target heart rate.
+
+Use case:
+
+```cs
+public static void Main(string[] args)
+{
+  Fitbyte assistant = new Fitbyte(30, 60);
+  double percentage = 0.5;
+
+  while (percentage < 1.0)
+  {
+    double target = assistant.TargetHeartRate(percentage);
+    Console.WriteLine("Target " + (percentage * 100) + "% of maximum: " + target);
+    percentage = percentage + 0.1;
+  }
+}
+```
+
+```console
+Target 50% of maximum: 122.48500000000001
+Target 60% of maximum: 134.98200000000003
+Target 70% of maximum: 147.479
+Target 80% of maximum: 159.976
+Target 89.99999999999999% of maximum: 172.473
+Target 99.99999999999999% of maximum: 184.97000000000003
+```
+
+
+## Overloading
+
+#### Exercise_122
+
+The exercise template has a class Product, which represents a product in a shop. Every product has a name, location and weight.
+
+Add the following three constructors to the Product class:
+
+- **public Product(string name)** creates a product with the given name. Its location is set to "shelf" and its weight is set to 1.
+- **public Product(string name, string location)** creates a product with the given name and the given location. Its weight is set to 1.
+- **public Product(string name, int weight)** creates a product with the given name and the given weight. Its location is set to "warehouse".
+You can test your program with the following code:
+
+```cs
+Product tapeMeasure = new Product("Tape measure");
+Product plaster = new Product("Plaster", "home improvement section");
+Product tyre = new Product("Tyre", 5);
+
+Console.WriteLine(tapeMeasure);
+Console.WriteLine(plaster);
+Console.WriteLine(tyre);
+```
+
+```console
+Tape measure (1 kg) can be found from the shelf. 
+Plaster (1 kg) can be found from the home improvement section. 
+Tyre (5 kg) can be found from the warehouse.
+```
+
+#### Exercise_123
+
+Implement a class called **Counter**. The class contains a number, whichs value can be increased and decreased. The class must have the following constructors:
+
+- **public Counter(int startValue)** sets the start value of the counter to startValue.
+
+- **public Counter()** sets the start value of the counter to 0.
+
+And the following methods and properties:
+
+- **public int value { get; set; }**
+- **public void Increase()** increases the value by 1
+- **public void Decrease()** decreases the value by 1
+- **public void Increase(int increaseBy)** increases the value of the counter by the value of increaseBy. If the value of increaseBy is negative, the value of the counter does not change.
+- **public void Decrease(int decreaseBy)** decreases the value of the counter by the value of decreaseBy. If the value of decreaseBy is negative, the value of the counter does not change.
+
+## Objects and references
+
+#### Exercise_124
+
+Implement a program that causes the **NullReferenceException** error. The error should occur directly after starting the program -- don't wait to read input from the user, for instance.
+
+HINT! Change an object into null, and try to use it.
+
+#### Exercise_125
+
+In the exercise base there is the class **Person**, which we are already quite familiar with. There is also an outline for the class **HealthStation**. Health station objects process people in different ways, they e.g. weigh and feed people. In this exercise we will construct a health station. The code of the Person class should not be modified in this exercise!
+
+
+##### Section 1 - Weighing people
+
+The **Weigh** method receives a person as a parameter, and it is meant to return to its caller the weight of that person. The weight information can be found by calling a suitable property of the Person person. So your task is to complete the code of the method!
+
+##### Section 2 - Feeding people
+
+It is possible to modify the state of the object that is received as a parameter. Fill in the method called **public void Feed(Person person)** for the health station. It should increase the weight of the parameter person by one.
+
+##### Section 3 - Counting weighings
+
+Use the variable **public int weighings { get; private set; }** to count weighings - That is, when ever the method **Weigh** is called, the variable should increase by one.
+
+Here's a Main class to test all of the sections:
+
+```cs
+public static void Main(string[] args)
+{
+  // Create new Station
+  HealthStation childrensHospital = new HealthStation();
+
+  // Create two new persons
+  Person ethan = new Person("Ethan", 1, 110, 7);
+  Person peter = new Person("Peter", 33, 176, 85);
+
+  // Try out the Persons and method Weigh
+  Console.WriteLine(ethan.name + " weight: " + childrensHospital.Weigh(ethan) + " kilos");
+  Console.WriteLine(peter.name + " weight: " + childrensHospital.Weigh(peter) + " kilos");
+
+  // Test feeding the persons
+  childrensHospital.Feed(ethan);
+  childrensHospital.Feed(peter);
+
+  // See that the weights have changed
+  Console.WriteLine(ethan.name + " weight: " + childrensHospital.Weigh(ethan) + " kilos");
+  Console.WriteLine(peter.name + " weight: " + childrensHospital.Weigh(peter) + " kilos");
+
+  // Keep weighing to increase the 'int weighings'
+  childrensHospital.Weigh(ethan);
+  childrensHospital.Weigh(ethan);
+  childrensHospital.Weigh(ethan);
+  childrensHospital.Weigh(ethan);
+
+  // See that the variable has increased to 8
+  Console.WriteLine("weighings performed: " + childrensHospital.weighings);
+}
+```
+
+Should print out 
+
+```console
+Ethan weight: 110 kilos
+Peter weight: 176 kilos
+Ethan weight: 111 kilos
+Peter weight: 177 kilos
+weighings performed: 8
+```
+
+#### Exercise_126
+
+In a previous exercises part we created a class called **PaymentCard**. The card had methods for eating a lunch and drinking coffee, and also for adding money to the card.
+
+However, there was a problem with the **PaymentCard** class that is implemented in this fashion. The card knew the prices of the different payments, and therefore was able to decrease the balance by the proper amount. What about if the prices are raised? Or new items are added to the list of offered products? A change in the pricing would mean that all the existing cards would have to be replaced with new cards that are aware of the new prices.
+
+An improved solution is to make the cards "dumb"; unaware of the prices and products that are sold, and only keeping track of their balance. All the intelligence is better placed in separate objects, payment terminals.
+
+
+##### Section 1
+
+Let's first implement the **"dumb" version of the PaymentCard**. The card only has ability for asking for the balance, adding money, and taking money. Complete the method **public bool TakeMoney(double amount)** in the class below (and found in the exercise template), using the following as a guide:
+
+```cs
+namespace exercise_126
+{
+  public class PaymentCard
+  {
+    public double balance { get; private set; }
+
+    public PaymentCard(double balance)
+    {
+      this.balance = balance;
+    }
+
+    public void AddMoney(double increase)
+    {
+      this.balance = this.balance + increase;
+    }
+
+    public bool TakeMoney(double amount)
+    {
+      // implement the method so that it only takes money from the card if
+      // the balance is at least the amount parameter.
+      // returns true if successful and false otherwise
+
+      return false;
+    }
+  }
+}
+```
+Should print like this:
+
+```console
+money 10
+successfully withdrew: True
+money 2
+successfully withdrew: False
+money 2
+```
+
+##### Section 2
+
+When visiting a student cafeteria, the customer pays either with cash or with a payment card. The cashier uses a payment terminal to charge the card or to process the cash payment. First, let's create a terminal that's suitable for cash payments.
+
+The outline of the payment terminal. The comments inside the methods tell the wanted functionality:
+
+```cs
+namespace exercise_126
+{
+  public class PaymentTerminal
+  {
+    private double money;  // amount of cash
+    private int coffeeAmount; // number of sold coffees
+    private int lunchAmount;  // number of sold lunches
+
+    public PaymentTerminal()
+    {
+      // register initially has 1000 euros of money
+    }
+
+    public double DrinkCoffee(double payment)
+    {
+      // an coffee now costs 2.50 euros
+      // increase the amount of cash by the price of an coffee mean and return the change
+      // if the payment parameter is not large enough, no coffee is sold and the method should return the whole payment
+    }
+
+    public double EatLunch(double payment)
+    {
+      // a lunch now costs 10.30 euros
+      // increase the amount of cash by the price of a lunch and return the change
+      // if the payment parameter is not large enough, no lunch is sold and the method should return the whole payment
+    }
+
+    public override string ToString()
+    {
+      return "money: " + money + ", number of sold coffees: " + coffeeAmount + ", number of sold lunches: " + lunchAmount;
+    }
+  }
+}
+```
+
+The terminal starts with 1000 euros in it. Implement the methods so they work correctly, using the basis above and the example prints of the main program below.
+
+```cs
+PaymentTerminal lunchCafeteria = new PaymentTerminal();
+
+double change = lunchCafeteria.DrinkCoffee(10);
+Console.WriteLine("remaining change " + change);
+
+change = lunchCafeteria.DrinkCoffee(5);
+Console.WriteLine("remaining change " + change);
+
+change = lunchCafeteria.EatLunch(20);
+Console.WriteLine("remaining change " + change);
+
+Console.WriteLine(lunchCafeteria);
+```
+
+```console
+remaining change 7.5
+remaining change 2.5
+remaining change 13
+money: 1015.3, number of sold coffees: 2, number of sold lunches: 1
+```
+
+##### Section 3
+
+Let's extend our payment terminal to also support card payments. We are going to create new methods for the terminal. It receives a payment card as a parameter, and decreases its balance by the price of the meal that was purchased. Here are the outlines for the methods, and instructions for completing them.
+
+```cs
+public bool DrinkCoffee(PaymentCard card)
+{
+  // a coffee costs 2.50 euros
+  // if the payment card has enough money, the balance of the card is decreased by the price, and the method returns true
+  // otherwise false is returned
+}
+
+public bool EatLunch(PaymentCard card)
+{
+  // a lunch costs 10.30 euros
+  // if the payment card has enough money, the balance of the card is decreased by the price, and the method returns true
+  // otherwise false is returned
+}
+```
+
+Notice! Card payments do not increase the cash in the register.
+
+```cs
+PaymentTerminal lunchCafeteria = new PaymentTerminal();
+
+double change = lunchCafeteria.DrinkCoffee(10);
+Console.WriteLine("remaining change: " + change);
+
+PaymentCard annesCard = new PaymentCard(15);
+
+bool wasSuccessful = lunchCafeteria.EatLunch(annesCard);
+Console.WriteLine("there was enough money: " + wasSuccessful);
+wasSuccessful = lunchCafeteria.EatLunch(annesCard);
+Console.WriteLine("there was enough money: " + wasSuccessful);
+wasSuccessful = lunchCafeteria.DrinkCoffee(annesCard);
+Console.WriteLine("there was enough money: " + wasSuccessful);
+
+Console.WriteLine(lunchCafeteria);
+```
+
+```console
+remaining change: 7.5
+there was enough money: True
+there was enough money: False
+there was enough money: True
+money: 1002.5, number of sold coffees: 2, number of sold lunches: 1
+```
+
+##### Section 4
+
+Let's create a method for the terminal that can be used to add money to a payment card. Recall that the payment that is received when adding money to the card is stored in the register (adding cash). The basis for the method:
+
+```cs
+public void AddMoneyToCard(PaymentCard card, double sum)
+{
+  // ...
+}
+```
+
+A main program to illustrate:
+
+
+```cs
+public static void Main(string[] args)
+{
+  // Try your code here, if you want
+
+  PaymentTerminal lunchCafeteria = new PaymentTerminal();
+  Console.WriteLine(lunchCafeteria);
+
+  PaymentCard annesCard = new PaymentCard(2);
+
+  Console.WriteLine("amount of money on the card is " + annesCard.balance + " euros");
+
+  bool wasSuccessful = lunchCafeteria.EatLunch(annesCard);
+  Console.WriteLine("there was enough money: " + wasSuccessful);
+
+  lunchCafeteria.AddMoneyToCard(annesCard, 100);
+
+  wasSuccessful = lunchCafeteria.EatLunch(annesCard);
+  Console.WriteLine("there was enough money: " + wasSuccessful);
+
+  Console.WriteLine("amount of money on the card is " + annesCard.balance + " euros");
+
+  Console.WriteLine(lunchCafeteria);
+}
+```
+
+```console
+money: 1000, number of sold coffees: 0, number of sold lunches: 0
+amount of money on the card is 2 euros
+there was enough money: False
+there was enough money: True
+amount of money on the card is 91.7 euros
+money: 1100, number of sold coffees: 0, number of sold lunches: 1
+```
+
+#### Exercise_127
+
+Two classes, Person and Pet, are included in the exercise template. Each person has one pet. Modify the **public override string ToString** method of the **Person class** so that the string it returns tells the pet's name and breed in addition to the person's own name.
+
+```cs
+public static void Main(string[] args)
+{
+
+  Pet lucy = new Pet("Lucy", "golden retriever");
+  Person leo = new Person("Leo", lucy);
+  Console.WriteLine(leo);
+
+  Person mike = new Person("Mike");
+  Console.WriteLine(mike);
+  
+  Person lilo = new Person();
+  Console.WriteLine(lilo);
+}
+```
+
+```console
+Leo, has a friend called Lucy (golden retriever)
+Lilo, has a friend called Stitch (blue alien)
+Mike, has a friend called Toothless (dragon)
+```
+
+#### Exercise_128
+
+Fill in the method **public bool LargerThan(Apartment compared)** that returns true if the apartment object whose method is called has a larger total area than the apartment object that is being compared.
+
+An example of how the method should work:
+
+```cs
+public static void Main(string[] args)
+{
+  Apartment manhattanStudioApt = new Apartment(1, 16, 5500);
+  Apartment atlantaTwoBedroomApt = new Apartment(2, 38, 4200);
+  Apartment bangorThreeBedroomApt = new Apartment(3, 78, 2500);
+
+  Console.WriteLine(manhattanStudioApt.LargerThan(atlantaTwoBedroomApt));
+  Console.WriteLine(bangorThreeBedroomApt.LargerThan(manhattanStudioApt));
+}
+```
+
+```console
+False
+True
+```
+
+Fill in the method **public int PriceDifference(Apartment compared)** that returns the price difference of the apartment object whose method was called and the apartment object received as the parameter. The price difference is the absolute value of the difference of the prices (price can be calculated by multiplying the price per square by the number of squares). Use the method **private int Price()** to calculate the price for the apartments.
+
+An example of how the method should work:
+
+```cs
+Apartment manhattanStudioApt = new Apartment(1, 16, 5500);
+Apartment atlantaTwoBedroomApt = new Apartment(2, 38, 4200);
+Apartment bangorThreeBedroomApt = new Apartment(3, 78, 2500);
+Console.WriteLine(manhattanStudioApt.PriceDifference(atlantaTwoBedroomApt));
+Console.WriteLine(bangorThreeBedroomApt.PriceDifference(manhattanStudioApt));
+```
+
+```console
+71600
+107000
+```
+
+Fill in the method **public bool MoreExpensiveThan(Apartment compared)** that returns true if the apartment object whose method is called is more expensive than the apartment object being compared.
+
+An example of how the method should work:
+
+```cs
+Apartment manhattanStudioApt = new Apartment(1, 16, 5500);
+Apartment atlantaTwoBedroomApt = new Apartment(2, 38, 4200);
+Apartment bangorThreeBedroomApt = new Apartment(3, 78, 2500);
+Console.WriteLine(manhattanStudioApt.MoreExpensiveThan(atlantaTwoBedroomApt));
+Console.WriteLine(bangorThreeBedroomApt.MoreExpensiveThan(manhattanStudioApt));
+```
+
+```console
+False
+True
+```
+
+#### Exercise_129
+
+In the exercise base there is a class called **Song** that can be used to create new objects that represent songs. Add to that class the **Equals** method so that the similarity of songs can be examined.
+
+You can try your code with this:
+
+```cs
+public static void Main(string[] args)
+{
+  // Try your code here, if you want
+  Song jackSparrow = new Song("The Lonely Island", "Jack Sparrow", 196);
+  Song anotherSparrow = new Song("The Lonely Island", "Jack Sparrow", 196);
+
+  if (jackSparrow.Equals(anotherSparrow))
+  {
+    Console.WriteLine("Songs are equal.");
+  }
+
+  if (jackSparrow.Equals("Another object"))
+  {
+    Console.WriteLine("Strange things are afoot.");
+  }
+}
+```
+
+#### Exercise_130
+
+There is a program in the exercise base that asks for books from the user and adds them to a list.
+
+Modify the program so that books that are already on the list are not added to it again. Two books should be considered the same if they have the same name and publication year.
+
+Example print:
+
+```console
+Name (empty will stop): 
+> Bossypants 
+Publication year: 
+>2013 
+Name (empty will stop):
+> Seriously...I'm Kidding
+Publication year:
+> 2012 
+Name (empty will stop):
+> Seriously...I'm Kidding 
+Publication year:
+> 2012 
+The book is already on the list. Let's not add the same book again. 
+Name (empty will stop):
+>
+
+Thank you! Books added: 2
+```
+
+#### Exercise_131
+
+The program should read items from the user. When all the items from the user have been read, the program prints the information of each item.
+
+For each item, its identifier and name should be read. If the identifier or name is empty, the program stops asking for input, and prints all the item information.
+
+Example print:
+
+```console
+Identifier? (empty will stop):
+> B07H8ND8HH 
+Name? (empty will stop):
+> He-Man figure
+Identifier? (empty will stop):
+> B07H8ND8HH 
+Name? (empty will stop):
+> He-Man 
+Identifier? (empty will stop):
+> B07NQFMZYG 
+Name? (empty will stop):
+> He-Man figure 
+Identifier? (empty will stop):
+> B07NQFMZYG 
+Name? (empty will stop):
+> He-Man figure
+Identifier? (empty will stop):
+>
+
+==Items== 
+B07H8ND8HH: He-Man figure 
+B07NQFMZYG: He-Man figure
+```
+
+
+The printing format of the items should be identifier: name.
+
+After entering the items, each item is printed at most once. Two items should be considered the same if their identifiers are the same (there can be variation in their names in different countries, for instance).
+
+If the user enters the same item multiple times, the print uses the item that was added first.
+
+Hint! It is probably smart to add each item to the list at most once -- compare the equality of the objects based on their identifiers.
+
+#### Exercise_132
+
+This exercise is worth 2.
+
+With the exercise base the class SimpleDate is supplied. The date is stored with the help of the object variables year, month, and day. There are some methods that need fulfilling:
+
+- **public void Advance()** advances the date by one day.  In this exercise we assume that each month has 30 day. Remember! In certain situations you need to change the values of month and year.
+- **public void Advance(int howManyDays)** advances the date by the amount of days. Use the method Advance() that you implemented to help you in this.
+- **public SimpleDate AfterNumberOfDays(int days)**  It creates a new SimpleDate object whose date is the specified number of days greater than the object that the method was called on. You may still assume that each month has 30 days. Notice that the old date object must remain unchanged!
+
+Since the last method must create a new object, the structure of the code should be somewhat similar to this:
+
+```cs
+SimpleDate newDate = new SimpleDate( ... );
+
+// Do something here
+
+return newDate;
+```
+
+The whole class template looks like this:
+
+```cs
+namespace exercise_132
+{
+  public class SimpleDate
+  {
+    private int day;
+    private int month;
+    private int year;
+
+    public SimpleDate(int day, int month, int year)
+    {
+      this.day = day;
+      this.month = month;
+      this.year = year;
+    }
+
+    public void Advance() {
+      // Do something here
+    }
+
+    public void Advance(int howManyDays) {
+      // Do something here
+    }
+
+    public SimpleDate AfterNumberOfDays(int days) {
+      SimpleDate newDate = new SimpleDate( ... );
+
+      // Do something here
+
+      return newDate;
+    }
+
+    
+    public override string ToString()
+    {
+      return this.day + "." + this.month + "." + this.year;
+    }
+
+    // used to check if this date object (`this`) is before
+    // the date object given as the parameter (`compared`)
+    public bool Before(SimpleDate compared)
+    {
+      // first compare years
+      if (this.year < compared.year)
+      {
+        return true;
+      }
+
+      // if the years are the same, compare months
+      if (this.year == compared.year && this.month < compared.month)
+      {
+        return true;
+      }
+
+      // the years and the months are the same, compare days
+      if (this.year == compared.year && this.month == compared.month &&
+          this.day < compared.day)
+      {
+        return true;
+      }
+
+      return false;
+    }
+  }
+}
+```
+
+Here's example use:
+```cs
+public static void Main(string[] args)
+{
+  SimpleDate date = new SimpleDate(13, 2, 2015);
+  Console.WriteLine("Friday of the examined week is " + date);
+
+  SimpleDate newDate = date.AfterNumberOfDays(7);
+  int week = 1;
+  while (week <= 7)
+  {
+    Console.WriteLine("Friday after " + week + " weeks is " + newDate);
+    newDate = newDate.AfterNumberOfDays(7);
+
+    week = week + 1;
+  }
+
+  Console.WriteLine("The date after 790 days from the examined Friday is ... try it out yourself!");
+  // Console.WriteLine("Try " + date.AfterNumberOfDays(790));
+
+}
+```
+
+```console
+Friday of the examined week is 13.2.2015
+Friday after 1 weeks is 20.2.2015
+Friday after 2 weeks is 27.2.2015
+Friday after 3 weeks is 4.3.2015
+Friday after 4 weeks is 11.3.2015
+Friday after 5 weeks is 18.3.2015
+Friday after 6 weeks is 25.3.2015
+Friday after 7 weeks is 2.4.2015
+The date after 790 days from the examined Friday is ... try it out yourself!
+```
+
+NOTICE! Instead of modifying the state of the old object we return a new one with **AfterNumberOfDays**. Imagine that the SimpleDate class has a method Advance that works similarly to the method we programmed, but it modifies the state of the old object. In that case the next block of code would cause problems.
+
+```cs
+SimpleDate now = new SimpleDate(13, 2, 2015);
+SimpleDate afterOneWeek = now;
+afterOneWeek.Advance(7);
+
+Console.WriteLine("Now: " + now);
+Console.WriteLine("After one week: " + afterOneWeek);
+```
+
+```console
+Now: 20.2.2015 
+After one week: 20.2.2015
+```
+
+This is because a normal assignment only copies the reference to the object. So the objects now and afterOneWeek in the program now refer to the **one and same SimpleDate object**.
+
+#### Exercise_132
+
+This exercise is worth 2.
+
+In the Payment card exercise we used a double-type object variable to store the amount of money. In real applications this is not the approach you want to take, since as we have seen, calculating with doubles is not exact. A more reasonable way to handle amounts of money is create an own class for that purpose. Here is a layout for the class:
+
+```cs
+namespace exercise_133
+{
+  public class Money
+  {
+
+    private int euros;
+    private int cents;
+
+    public Money(int euros, int cents)
+    {
+      if (cents > 99)
+      {
+        euros = euros + cents / 100;
+        cents = cents % 100;
+      }
+
+      this.euros = euros;
+      this.cents = cents;
+    }
+
+    public Money Plus(Money addition)
+    {
+      Money newMoney = new Money(/* Do something here*/);
+      // create a new Money object that has the correct worth
+
+      // return the new Money object
+      return newMoney;
+    }
+
+    public Money Minus(Money decreaser)
+    {
+      Money newMoney = new Money(/* Do something here*/);
+      // create a new Money object that has the correct worth
+
+      // return the new Money object
+      return newMoney;
+    }
+
+    public bool LessThan(Money compared)
+    {
+      // Do something here
+      return false;
+    }
+
+    public string toString()
+    {
+      string zero = "";
+      if (cents <= 10)
+      {
+        zero = "0";
+      }
+
+      return euros + "." + zero + cents + "e";
+    }
+  }
+}
+```
+
+Next we'll create a few operations for processing money.
+
+- First create the method **public Money Plus(Money addition)** that returns a new money object that is worth the total amount of the object whose mehtod was called and the object that is received as the parameter.
+
+The basis for the method is the following:
+
+```cs
+public Money Plus(Money addition)
+{
+  Money newMoney = new Money(/* Do something here*/);
+  // create a new Money object that has the correct worth
+
+  // return the new Money object
+  return newMoney;
+}
+```
+NOTICE! If the cents would go over 100, the euros should increase as well!
+
+- Create the method **public bool LessThan(Money compared)** that returns true if the money object whose method is called has a greater worth than the money object that is received as the method parameter.
+
+- Write the method **public Money Minus(Money decreaser)** that returns a new money object worth the difference of the object whose method was called and the object received as the parameter. If the difference would be negative, the worth of the created money object is set to 0.
+
+NOTICE! If the cents would go under 0, the euros should decrease as well!
+
+Example of all the methods:
+```cs
+Money money = new Money(100, 00);
+Money moreMoney = new Money(500, 50);
+
+Money combined = money.Plus(moreMoney);
+
+Console.WriteLine(money);
+Console.WriteLine(moreMoney);
+Console.WriteLine(combined);
+
+Money lessMoney = moreMoney.Minus(money);
+
+Console.WriteLine(money);
+Console.WriteLine(moreMoney);
+Console.WriteLine(lessMoney);
+
+lessMoney = lessMoney.Minus(money);
+
+Console.WriteLine(money);
+Console.WriteLine(moreMoney);
+Console.WriteLine(lessMoney);
+
+Console.WriteLine(lessMoney.LessThan(moreMoney));
+Console.WriteLine(lessMoney.LessThan(money));
+
+lessMoney = lessMoney.Minus(moreMoney);
+Console.WriteLine(lessMoney);
+```
+
+Prints out
+
+```console
+100.00e
+500.50e
+600.50e
+100.00e
+500.50e
+400.50e
+100.00e
+500.50e
+300.50e
+True
+False
+0.00e
 ```
