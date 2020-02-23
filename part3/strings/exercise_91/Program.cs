@@ -5,7 +5,9 @@ namespace exercise_91
 {
   class Program
   {
-    public static void Main(string[] args)
+        private static object convert;
+
+        public static void Main(string[] args)
     {
       // integer called oldest
       int oldest = 0;
@@ -13,6 +15,7 @@ namespace exercise_91
 
       // read from user
       while (true)
+      {
       string question = Console.ReadLine();
       // break if empty
       if (question == "")
@@ -26,7 +29,7 @@ namespace exercise_91
       // check if the age is greater than oldest
       // and convetrs part[1] into int
 
-      if (convert.ToInt32(parts[1]) > oldest))
+      if (Convert.ToInt32(parts[1]) > oldest)
       {
         oldest = Convert.ToInt32(parts[1]);
         name = parts[0];
@@ -34,7 +37,7 @@ namespace exercise_91
       
     }
     Console.WriteLine("Name of the oldest: " + name);
-    
+    }
     
     
   }
