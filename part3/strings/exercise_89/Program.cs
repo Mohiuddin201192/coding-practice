@@ -18,6 +18,7 @@ namespace exercise_89
       Console.WriteLine(pieces[pieces.Length -1]);
 
     }
+    }
   }
 }
 
