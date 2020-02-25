@@ -13,7 +13,7 @@ namespace exercise_97
         public void sound() 
         {
         
-        Console.WriteLine(this.sound);
+        Console.WriteLine(this.Sound);
 
         } 
     }
