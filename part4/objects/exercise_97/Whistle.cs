@@ -9,10 +9,12 @@ namespace exercise_97
         {
             this.sound = whistleSound;
         }
-    
-    public  void sound()
-    {
+
+        public void sound() 
+        {
+        
         Console.WriteLine(this.sound);
+
+        } 
     }
-}
 }
