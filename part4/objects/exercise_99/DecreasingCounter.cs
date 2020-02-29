@@ -18,13 +18,16 @@ namespace exercise_99
 
     public void Decrement()
     {
-      // write the method implementation here
-      // the aim is to decrement the value of the counter by one
+      if ( this.value > 0)
+      {
+        this.value = this.value - 1;
+      }
 
     }
 
-    public void Reset() {
-      // write the method implementation here∑
+    public void Reset() 
+    {
+      this.value = 0;
 
     }
   }
