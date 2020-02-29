@@ -7,7 +7,23 @@ namespace exercise_110
   {
     public static void Main(string[] args)
     {
-      // IMPLEMENT YOUR CODE IN HERE!
+      List<Item> names = new List<Item>();
+      while (true)
+      {
+        Console.Write("Name: ");
+        string name = Console.ReadLine();
+        if (name == "")
+        {
+          break;
+        }
+        names.Add (new Item(name));
+
+      }
+        
+        foreach (Item name in names)
+        {
+          Console.WriteLine(name);
+        }
     }
   }
 }
