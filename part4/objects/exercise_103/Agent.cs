@@ -10,7 +10,7 @@ namespace exercise_103 {
 
     public override string ToString() {
       // Should return for example "My name is Bond. James Bond."
-      return "";
+      return "My name is " + lastName + ". " + firstName + " " + lastName + ".";
     }
   }
 }
