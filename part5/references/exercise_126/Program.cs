@@ -6,7 +6,17 @@ namespace exercise_126
   {
     public static void Main(string[] args)
     {
-      // Try your code here, if you want
+      PaymentTerminal lunchCafeteria = new PaymentTerminal();
+      double change = lunchCafeteria.DrinkCoffee(0);
+      Console.WriteLine("remaining change " + change);
+
+      change = lunchCafeteria.DrinkCoffee(4);
+      Console.WriteLine("remaining change " + change);
+
+      change = lunchCafeteria.EatLunch (3);
+      Console.WriteLine("remaining change " + change);
+
+      Console.WriteLine(lunchCafeteria);
     }
   }
 }
