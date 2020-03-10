@@ -6,7 +6,9 @@ namespace exercise_124
   {
     public static void Main(string[] args)
     {
-      // Implement your program here!
+      Null error = null;
+      error.Increase(1);
+      Console.WriteLine(error);
 
       
     }
