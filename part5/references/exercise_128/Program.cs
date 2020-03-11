@@ -6,7 +6,7 @@ namespace exercise_128
   {
     public static void Main(string[] args)
     {
-      // Try your code here, if you want
+      
       Apartment manhattanStudioApt = new Apartment(1, 16, 5500);
       Apartment atlantaTwoBedroomApt = new Apartment(2, 38, 4200);
       Apartment bangorThreeBedroomApt = new Apartment(3, 78, 2500);
