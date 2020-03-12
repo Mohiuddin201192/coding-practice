@@ -10,6 +10,30 @@ namespace exercise_131
       List<Item> items = new List<Item>();
 
       // Ask for input as shown in the exercise.
+      while (true)
+      {
+        Console.WriteLine("Identifier? (empty will stop):");
+        string Identifier = Console.ReadLine();
+        if (Identifier == "")
+        {
+          break;
+        }
+        Console.WriteLine("Name? (empty will stop):");
+        string name = Console.ReadLine();
+        if (name == "")
+        {
+          break;
+        }
+        Item item = new Item(Identifier, name);
+        if (items.Contains(item))
+        {
+          continue;
+        }
+        else 
+        {
+          items.Add(item);
+        }
+      }
 
       // The end printing is ready, don't touch this
       Console.WriteLine("==Items==");
